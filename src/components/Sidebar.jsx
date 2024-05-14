@@ -25,7 +25,10 @@ export default function AnchorTemporaryDrawer({
         {["HOME", "BLUE", "RED", "GREEN", "ORANGE", "PURPLE", "PINK"].map(
           (text, index) => (
             <ListItem key={text} disablePadding id="listeditems">
-              <Link to={`/${text.toLowerCase()}`} id="AppLinks">
+              <Link
+                to={text === "HOME" ? "/" : `/${text.toLowerCase()}`}
+                id="AppLinks"
+              >
                 <ListItemButton>
                   <ListItemText primary={text} />
                 </ListItemButton>
